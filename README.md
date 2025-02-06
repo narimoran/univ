@@ -109,28 +109,6 @@
             <td>Cours Phénomène</td>
         </tr>
     </table>
-    <button onclick="downloadPDF()">Download as PDF</button>
-    
-    <script>
-        function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            doc.text("University Weekly Planner", 10, 10);
-            
-            let y = 20;
-            const table = document.querySelector("table");
-            for (let row of table.rows) {
-                let x = 10;
-                for (let cell of row.cells) {
-                    const text = cell.innerText;
-                    doc.text(text, x, y);
-                    x += 35;
-                }
-                y += 10;
-            }
-            
-            doc.save("university_planner.pdf");
-        }
-    </script>
+  
 </body>
 </html>
